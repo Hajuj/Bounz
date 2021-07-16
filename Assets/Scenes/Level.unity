@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.30999756, y: -251.77002}
-  m_SizeDelta: {x: 7.3742, y: -475.4094}
+  m_AnchoredPosition: {x: 0.30999756, y: -326.2}
+  m_SizeDelta: {x: 7.3742, y: -650.2003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5987353
 MonoBehaviour:
@@ -895,7 +895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -5.912, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 173.32611, y: 51.039673}
+  m_AnchoredPosition: {x: 173.32611, y: -28.4}
   m_SizeDelta: {x: 366.5728, y: 81.86511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &584205558
@@ -1111,7 +1111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -5.912, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 436.60144, y: 53.06494}
+  m_AnchoredPosition: {x: 436.60144, y: -26.374725}
   m_SizeDelta: {x: 366.5728, y: 81.86511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648731773
@@ -1245,7 +1245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 467.15186, y: 21.064941}
+  m_AnchoredPosition: {x: 467.15186, y: -58.374725}
   m_SizeDelta: {x: 31.625, y: 30.6932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786979446
@@ -1503,6 +1503,7 @@ GameObject:
   - component: {fileID: 975017800}
   - component: {fileID: 975017799}
   - component: {fileID: 975017798}
+  - component: {fileID: 975017802}
   m_Layer: 6
   m_Name: wall_tilemap
   m_TagString: Untagged
@@ -17296,6 +17297,32 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &975017802
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975017796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 20, y: 2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 78, y: 32}
+  m_EdgeRadius: 0
 --- !u!1 &988416687
 GameObject:
   m_ObjectHideFlags: 0
@@ -17482,7 +17509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -5.912, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 703.65186, y: 18.56491}
+  m_AnchoredPosition: {x: 703.65186, y: -60.874756}
   m_SizeDelta: {x: 366.5728, y: 81.86511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055922762
@@ -17743,7 +17770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -5.912, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 700.65186, y: 54.077515}
+  m_AnchoredPosition: {x: 700.65186, y: -25.362152}
   m_SizeDelta: {x: 366.5728, y: 81.86511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249217563
@@ -18181,7 +18208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 433.15186, y: 21.064941}
+  m_AnchoredPosition: {x: 433.15186, y: -58.374725}
   m_SizeDelta: {x: 31.625, y: 30.6932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483413168
@@ -18256,7 +18283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400.45184, y: 21.364868}
+  m_AnchoredPosition: {x: 400.45184, y: -58.0748}
   m_SizeDelta: {x: 31.625, y: 30.6932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502609422
@@ -18577,7 +18604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199.76186, y: 35.634888}
+  m_AnchoredPosition: {x: 199.76186, y: -43.80478}
   m_SizeDelta: {x: 128.5735, y: 29.92}
   m_Pivot: {x: 0.7056363, y: 0.9999996}
 --- !u!114 &1661563045
