@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
    public void PlayGame()
    {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       SceneManager.LoadScene(GameManager.GetLevel()+1); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
    }
 
     public void QuitGame()

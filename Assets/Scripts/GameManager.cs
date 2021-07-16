@@ -13,11 +13,14 @@ public class GameManager : MonoBehaviour
     public Sprite oneBall;
     public Sprite twoBall;
     public Sprite threeBall;
+    private static int level =1;
 
     public GameManager(){
         numRings = 3;
         collectedRings = 0;
         allRingsCollected = false;
+        level=1;
+
     }
 
     public void DecreaseHealth(GameObject healthBalls) {
@@ -59,9 +62,15 @@ public class GameManager : MonoBehaviour
     {
         if(allRingsCollected){
             Debug.Log("LEVEL WON! See? He's her lobster.");
-            completeLevelUI.SetActive(true);
+            SceneManager.LoadScene(1);
+            level++;
+           // completeLevelUI.SetActive(true);
         }else{
             Debug.Log("Joey doesn't share his food! Get your own rings.");
         }
+    }
+
+    public static int GetLevel(){
+        return level;
     }
 }
