@@ -7,6 +7,7 @@ public class Ring : MonoBehaviour
     public bool active = true;
     public GameManager gameManager;
     public SpriteRenderer spriteRenderer;
+    public GameObject canvasRing;
     public Sprite ringCollected;
 
     void OnTriggerEnter2D(Collider2D col)
@@ -17,6 +18,7 @@ public class Ring : MonoBehaviour
             active = false;
             Debug.Log("collect Ring!");
             spriteRenderer.sprite = ringCollected;
+            canvasRing.GetComponent<UnityEngine.UI.Image>().sprite = ringCollected;
 
           
         }

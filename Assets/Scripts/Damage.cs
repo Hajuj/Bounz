@@ -9,6 +9,7 @@ public class Damage : MonoBehaviour
     private Vector3 checkPos;
     public GameManager gameManager;
     private float updateValue;
+    public GameObject healthBalls;
 
     void Start() {
         checkPos = checkPoint.transform.position;
@@ -23,7 +24,7 @@ public class Damage : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collider) {
         if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "BigPlayer") {
             Debug.Log("Hey Morty we are lost in the universe!");
-            gameManager.DecreaseHealth();
+            gameManager.DecreaseHealth(healthBalls);
             if(gameManager.health > 0) {
                 collider.transform.position = checkPos;
             }

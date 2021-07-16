@@ -7,25 +7,41 @@ public class GameManager : MonoBehaviour
 {
     public GameObject completeLevelUI;
     public int health = 3;
-     public int numRings;
+    public int numRings;
     public int collectedRings;
     public bool allRingsCollected;
+    public Sprite oneBall;
+    public Sprite twoBall;
+    public Sprite threeBall;
 
     public GameManager(){
-        numRings = 2;
+        numRings = 3;
         collectedRings = 0;
         allRingsCollected = false;
     }
 
-    public void DecreaseHealth() {
+    public void DecreaseHealth(GameObject healthBalls) {
         health--;
-        if (health == 0) {
+         switch (health)
+         {
+          case 1:
+              healthBalls.GetComponent<UnityEngine.UI.Image>().sprite = oneBall;
+              break;
+          case 2:
+              healthBalls.GetComponent<UnityEngine.UI.Image>().sprite = twoBall;
+              break;
+          case 3:
+              healthBalls.GetComponent<UnityEngine.UI.Image>().sprite = threeBall;
+              break;
+          case 0:
             Debug.Log("YOU ARE DEAD BITCH!");
             EndGame();
-        }
+                          break;
+      }
     }
     
     public void CollectRing(){
+        
         collectedRings++;
         if(collectedRings==numRings){
             allRingsCollected = true;
