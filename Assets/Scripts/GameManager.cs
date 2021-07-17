@@ -62,9 +62,10 @@ public class GameManager : MonoBehaviour
     {
         if(allRingsCollected){
             Debug.Log("LEVEL WON! See? He's her lobster.");
+            completeLevelUI.SetActive(true);
             SceneManager.LoadScene(1);
             level++;
-           // completeLevelUI.SetActive(true);
+            
         }else{
             Debug.Log("Joey doesn't share his food! Get your own rings.");
         }
