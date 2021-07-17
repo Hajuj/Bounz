@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
 
     void Start() {
         checkPos = checkPoint.transform.position;
-        updateValue = 0.05f;
+        updateValue = 0.02f;
         Debug.Log("FUCK");
     }
     void Update () {  
