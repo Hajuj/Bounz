@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded() && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SoundManager.PlaySound();
+            SoundManager.PlayJumpSound();
             rb.velocity = Vector2.up * jumpVelocity;
         }
 
