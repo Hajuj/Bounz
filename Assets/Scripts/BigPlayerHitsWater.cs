@@ -10,11 +10,15 @@ public class BigPlayerHitsWater : MonoBehaviour
         Rigidbody2D colRb;
         colRb = col.GetComponent<Rigidbody2D>();
 
-        SoundManager.PlaySplashSound();
-
-        if(col.gameObject.tag == "BigPlayer")
+        
+        
+        if(col.gameObject.tag == "Player" || col.gameObject.tag == "BigPlayer")
         {
-            colRb.gravityScale = -1;
+            SoundManager.PlaySplashSound();
+            if(col.gameObject.tag == "BigPlayer")
+            {
+                colRb.gravityScale = -1;
+            }
         }
     }
 
