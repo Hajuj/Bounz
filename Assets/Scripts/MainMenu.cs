@@ -5,13 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+   public GameObject gotoLevelUI;
+
    public void PlayGame()
    {
-       SceneManager.LoadScene(GameManager.GetLevel()+1); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
+        gotoLevelUI.SetActive(true);
+
+        StartCoroutine(CoroutinePlayGame(1f));
    }
 
     public void QuitGame()
     {
       Application.Quit();
     }
+
+    IEnumerator CoroutinePlayGame(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        SceneManager.LoadScene(GameManager.GetLevel() + 2); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
+    }
+
 }

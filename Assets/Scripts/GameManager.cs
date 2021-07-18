@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public Sprite fiveBall;
     private static int level =1;
 
-    public GameManager(){
+    void Start(){
         numRings = 3;
         collectedRings = 0;
         allRingsCollected = false;
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
     }
     
     public void CollectRing(){
-        
         collectedRings++;
         if(collectedRings==numRings){
             allRingsCollected = true;
@@ -61,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
+        SceneManager.LoadScene(2);
         Debug.Log("GAME OVER! Hard as this may be to believe, it's possible that I'm not boyfriend material.");
 
         completeLevelUI.SetActive(true);

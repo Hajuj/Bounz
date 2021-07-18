@@ -10,5 +10,6 @@ public class EndTrigger : MonoBehaviour
     void OnTriggerEnter2D()
     {
         gameManager.CompleteLevel();
+
     }
 }

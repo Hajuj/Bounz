@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private CircleCollider2D cc;
     [SerializeField] private float jumpVelocity;
     private float moveSpeed;
-
+    
     // Start is called before the first frame update
     void Start()
     {

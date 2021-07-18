@@ -1,23 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Damage : MonoBehaviour
 {
-    public GameObject checkPoint;
-    private Vector3 checkPos;
+    public static Transform checkpoint;
     public GameManager gameManager;
     private float updateValue;
     public GameObject healthBalls;
+    public bool isStationary;
+    
 
     void Start() {
-        checkPos = checkPoint.transform.position;
         updateValue = 0.02f;
+        GameObject eg = new GameObject();
+        eg.transform.Translate(-5f,-1f,0f);
+        checkpoint = eg.transform;
         Debug.Log("FUCK");
     }
     void Update () {  
-        transform.Translate (0f, updateValue, 0f);  
+        if(!isStationary){
+        transform.Translate (0f, updateValue, 0f); 
+        } 
           
     }  
 
@@ -26,7 +32,9 @@ public class Damage : MonoBehaviour
             Debug.Log("Hey Morty we are lost in the universe!");
             gameManager.UpdateHealth(healthBalls, false);
             if(gameManager.health > 0) {
-                collider.transform.position = checkPos;
+                collider.transform.position = checkpoint.transform.position;
+            }else{
+                 SceneManager.LoadScene(2);
             }
         }       
     }
@@ -34,6 +42,7 @@ public class Damage : MonoBehaviour
     public void UpdateValue(){
         updateValue = updateValue*-1;
     }
+
 
     
 }
