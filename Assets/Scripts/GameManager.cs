@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject completeLevelUI;
-    public GameObject youlostUI;
+    public GameObject youLostUI;
     public int health = 3;
     public int numRings;
     public int collectedRings;
@@ -64,8 +64,8 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("GAME OVER! Hard as this may be to believe, it's possible that I'm not boyfriend material.");
 
-        youlostUI.SetActive(true);
-        StartCoroutine(CoroutineYouLost(2f));
+        youLostUI.SetActive(true);
+        StartCoroutine(CoroutineYouLost(1f));
     }
 
     public void CompleteLevel ()
@@ -73,8 +73,8 @@ public class GameManager : MonoBehaviour
         if(allRingsCollected){
             Debug.Log("LEVEL WON! See? He's her lobster.");
             completeLevelUI.SetActive(true);
-            StartCoroutine(CoroutineLevelComplete(2f));
-            level++;
+            StartCoroutine(CoroutineLevelComplete(1f));
+
             
         }else{
             Debug.Log("Joey doesn't share his food! Get your own rings.");
