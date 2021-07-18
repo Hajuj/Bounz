@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour {
     public static AudioClip splash;
     public static AudioClip ring;
     public static AudioClip check;
+    public static AudioClip life;
     public static AudioSource source;
 
     void Start()
@@ -27,6 +28,13 @@ public class SoundManager : MonoBehaviour {
         Debug.Log("playing splash sound");
         splash = Resources.Load<AudioClip>("Sounds/splash");
         source.PlayOneShot(splash);
+    }
+
+    public static void PlayLifeSound()
+    {
+        Debug.Log("playing life sound");
+        life = Resources.Load<AudioClip>("Sounds/life");
+        source.PlayOneShot(life);
     }
     
     public static void PlayRingSound()

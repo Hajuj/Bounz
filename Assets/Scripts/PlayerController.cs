@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private CircleCollider2D cc;
     [SerializeField] private float jumpVelocity;
     private float moveSpeed;
-    
+    public const float PI = 3.1415926535897931F;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D raycastHit2D = Physics2D.BoxCast(cc.bounds.center, cc.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask);
         return (raycastHit2D.collider != null);
-        
+
     }
 
     private void HandleMovement()
@@ -44,17 +45,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) && CanMoveRight())
         {
-            //Debug.Log("Registered Right Arrow");
             rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
         }
         else
         {
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) && CanMoveLeft())
             {
-                //Debug.Log("Registered Left Arrow");
                 rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             }
             else
@@ -62,5 +61,31 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
         }
+    }
+
+    private bool CanMoveRight()
+    {
+        if(gameObject.tag == "BigPlayer"){
+         RaycastHit2D raycastHit2D = Physics2D.Raycast(cc.bounds.center, Vector2.right , 0.7f, platformsLayerMask);
+         return (raycastHit2D.collider == null);
+        }
+        else {
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(cc.bounds.center, Vector2.right , 0.53f, platformsLayerMask);
+         return (raycastHit2D.collider == null);
+        }
+        
+    }
+
+    private bool CanMoveLeft()
+    {
+        if(gameObject.tag == "BigPlayer"){
+         RaycastHit2D raycastHit2D = Physics2D.Raycast(cc.bounds.center, Vector2.left , 0.7f, platformsLayerMask);
+         return (raycastHit2D.collider == null);
+        }
+        else {
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(cc.bounds.center, Vector2.left , 0.53f, platformsLayerMask);
+         return (raycastHit2D.collider == null);
+        }
+        
     }
 }

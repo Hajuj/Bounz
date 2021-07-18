@@ -13,6 +13,7 @@ public GameManager gameManager;
         if(gameManager.GetHealth()!=5){
             gameManager.UpdateHealth(healthBalls, true);
             increaseHealthBall.SetActive(false);
+            SoundManager.PlayLifeSound();
         }
     }
 }
