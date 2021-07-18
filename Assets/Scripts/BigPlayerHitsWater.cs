@@ -9,6 +9,9 @@ public class BigPlayerHitsWater : MonoBehaviour
         //Debug.Log("trigger!!!");
         Rigidbody2D colRb;
         colRb = col.GetComponent<Rigidbody2D>();
+
+        SoundManager.PlaySplashSound();
+
         if(col.gameObject.tag == "BigPlayer")
         {
             colRb.gravityScale = -1;
