@@ -14,3 +14,5 @@ The spiky chalices make you small, the dull chalices make you big.
 - The spiky enemy kills you (duh!)
 - Collect the little blue balls for extra lives
 - Have fun
+- start with the MainMenue :-)
+- the assignment said you might not get our camera, Unitys default camera does not work on our project therefore you might want to use the Executable since it includes our camera in any case
