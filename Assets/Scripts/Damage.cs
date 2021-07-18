@@ -24,7 +24,7 @@ public class Damage : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collider) {
         if(collider.gameObject.tag == "Player" || collider.gameObject.tag == "BigPlayer") {
             Debug.Log("Hey Morty we are lost in the universe!");
-            gameManager.DecreaseHealth(healthBalls);
+            gameManager.UpdateHealth(healthBalls, false);
             if(gameManager.health > 0) {
                 collider.transform.position = checkPos;
             }
