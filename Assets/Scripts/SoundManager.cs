@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour {
 
     public static AudioClip jump;
     public static AudioClip splash;
+    public static AudioClip ring;
     public static AudioSource source;
 
     void Start()
@@ -25,5 +26,12 @@ public class SoundManager : MonoBehaviour {
         Debug.Log("playing splash sound");
         splash = Resources.Load<AudioClip>("Sounds/splash");
         source.PlayOneShot(splash);
+    }
+    
+    public static void PlayRingSound()
+    {
+        Debug.Log("playing ring sound");
+        ring = Resources.Load<AudioClip>("Sounds/ring");
+        source.PlayOneShot(ring);
     }
 }
