@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Sprite oneBall;
     public Sprite twoBall;
     public Sprite threeBall;
+    public Sprite fourBall;
+    public Sprite fiveBall;
     private static int level =1;
 
     public GameManager(){
@@ -23,8 +25,8 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void DecreaseHealth(GameObject healthBalls) {
-        health--;
+    public void UpdateHealth(GameObject healthBalls, bool increase) {
+        if(increase){health++;}else{health--;}
          switch (health)
          {
           case 1:
@@ -36,10 +38,16 @@ public class GameManager : MonoBehaviour
           case 3:
               healthBalls.GetComponent<UnityEngine.UI.Image>().sprite = threeBall;
               break;
+          case 4:
+              healthBalls.GetComponent<UnityEngine.UI.Image>().sprite = fourBall;
+              break;
+          case 5:
+              healthBalls.GetComponent<UnityEngine.UI.Image>().sprite = fiveBall;
+              break;
           case 0:
             Debug.Log("YOU ARE DEAD BITCH!");
             EndGame();
-                          break;
+            break;
       }
     }
     
@@ -73,5 +81,8 @@ public class GameManager : MonoBehaviour
 
     public static int GetLevel(){
         return level;
+    }
+    public int GetHealth(){
+        return health;
     }
 }

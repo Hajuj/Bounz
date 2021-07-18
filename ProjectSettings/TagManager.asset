@@ -17,7 +17,7 @@ TagManager:
   - UI
   - Platforms
   - Player
-  - 
+  - Ring
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2283425065
+    locked: 0
+  - name: Ring
+    uniqueID: 3727807017
     locked: 0
