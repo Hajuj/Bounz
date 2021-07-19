@@ -5,14 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class DeadMenu : MonoBehaviour
 {
+  public GameObject nextLevelPanelUI;
+  public GameObject deadPanelUI;
 
+void Start(){
+  StartCoroutine(CoroutineStop(1f));
+}
  public void Retry()
    {
-       SceneManager.LoadScene(GameManager.GetLevel()+2);
+      nextLevelPanelUI.SetActive(true);
+      
+      StartCoroutine(CoroutineNextLevel(1f));
    }
-   
-   public void MainMenu()
+
+    IEnumerator CoroutineNextLevel(float waitTime)
     {
-      SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(waitTime);
+
+        SceneManager.LoadScene(GameManager.level + 2); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
+    }
+
+    IEnumerator CoroutineStop(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        deadPanelUI.SetActive(false);
     }
 }

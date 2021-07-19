@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject completeLevelUI;
     public GameObject youLostUI;
-    public int health = 3;
+    public int health;
     public int numRings;
     public int collectedRings;
     public bool allRingsCollected;
@@ -16,14 +16,11 @@ public class GameManager : MonoBehaviour
     public Sprite threeBall;
     public Sprite fourBall;
     public Sprite fiveBall;
-    private static int level =1;
+    public static int level = 1;
 
     void Start(){
-        numRings = 3;
         collectedRings = 0;
         allRingsCollected = false;
-        level=1;
-
     }
 
     public void UpdateHealth(GameObject healthBalls, bool increase) {
@@ -59,7 +56,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void EndGame()
+    public void EndGame()
     {
 
         Debug.Log("GAME OVER! Hard as this may be to believe, it's possible that I'm not boyfriend material.");
@@ -81,9 +78,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static int GetLevel(){
-        return level;
-    }
     public int GetHealth(){
         return health;
     }
@@ -94,7 +88,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         SceneManager.LoadScene(1);
+        if(level<4){
         level++;
+        }else{
+        level = 1;
+        }
     }
 
     IEnumerator CoroutineYouLost(float waitTime)
@@ -102,6 +100,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         SceneManager.LoadScene(2);
-        level++;
     }
 }

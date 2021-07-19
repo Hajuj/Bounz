@@ -23,7 +23,7 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        SceneManager.LoadScene(GameManager.GetLevel() + 2); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
+        SceneManager.LoadScene(GameManager.level + 2); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
     }
 
 }

@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ContinueMenu : MonoBehaviour
 {
-  public GameObject nextLevelPanelUI;
+public GameObject nextLevelPanelUI;
+public GameObject startContinuePanelUI;
+
+
+  void Start(){
+  StartCoroutine(CoroutineStop(1f));
+}
  public void NextLevel()
 
    {
@@ -21,7 +27,18 @@ public class ContinueMenu : MonoBehaviour
     IEnumerator CoroutineNextLevel(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+        if(GameManager.level<5){
+        SceneManager.LoadScene(GameManager.level + 2); 
+        }else{
+          SceneManager.LoadScene(2);
+        }
+    }
 
-        SceneManager.LoadScene(GameManager.GetLevel() + 2); //TODO MAKE VARIABLE DEPENDING ON CURRENT LEVEL
+
+    IEnumerator CoroutineStop(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        startContinuePanelUI.SetActive(false);
     }
 }

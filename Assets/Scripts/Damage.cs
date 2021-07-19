@@ -34,7 +34,7 @@ public class Damage : MonoBehaviour
             if(gameManager.health > 0) {
                 collider.transform.position = checkpoint.transform.position;
             }else{
-                 SceneManager.LoadScene(2);
+                 gameManager.EndGame();
             }
         }       
     }
