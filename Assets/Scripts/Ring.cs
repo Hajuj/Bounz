@@ -18,7 +18,8 @@ public class Ring : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if((forBig||col.gameObject.tag != "BigPlayer") && active){
+        if(((forBig&&col.gameObject.tag.Contains("Player")) || (!forBig&&col.gameObject.tag == "Player")) && active){
+            Debug.Log(col.gameObject.tag);
             gameManager.CollectRing();
             active = false;
             Debug.Log("collect Ring!");

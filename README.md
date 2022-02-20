@@ -1,4 +1,9 @@
-# mmp_bounz
+# Bounz
+
+![Logo](bounz/Assets/Pictures/Logo.png)
+
+## Downloading the Game
+1. The game for mac is  located [here](../bounz/Bounz)
 ## Playing The Game
 
 Move the Ball with the Arrow Keys: Left to go left, Right to go Right, Up to Jump
