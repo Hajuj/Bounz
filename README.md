@@ -1,6 +1,6 @@
 # Bounz
 
-![Logo](../Assets/Pictures/Logo.png)
+![Logo](Assets/Pictures/Logo.png)
 
 ## Downloading the Game
 1. The game for mac is in Bounz.zip
